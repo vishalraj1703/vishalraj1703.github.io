@@ -846,8 +846,11 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 .team-line{margin-top:12px;font-size:.88rem;color:var(--soft)}
 .team-line a{color:var(--acc-t);font-weight:700}
 
+
+.cur-ring{display:none!important}
+#silk{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:298}
 /* Spider-Man touches: spider cursor, web splat, hanging spider, cobweb, spider-sense */
-@media (pointer:fine){html,body,a,button,label,[data-act],.rk,.pad,.idcard,summary{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M14%2014%208%208%204%2010M13.5%2016%207%2014%203%2016M13.5%2018%207%2020%203%2023M14%2020%209%2025%206%2029M18%2014%2024%208%2028%2010M18.5%2016%2025%2014%2029%2016M18.5%2018%2025%2020%2029%2023M18%2020%2023%2025%2026%2029%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M14%2014%208%208%204%2010M13.5%2016%207%2014%203%2016M13.5%2018%207%2020%203%2023M14%2020%209%2025%206%2029M18%2014%2024%208%2028%2010M18.5%2016%2025%2014%2029%2016M18.5%2018%2025%2020%2029%2023M18%2020%2023%2025%2026%2029%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2219.5%22%20rx%3D%223.9%22%20ry%3D%224.9%22%20fill%3D%22%23E23636%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.2%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.2%22%20r%3D%222.9%22%20fill%3D%22%23E23636%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.2%22/%3E%3Cpath%20d%3D%22M14.6%2011.6q.6-.9%201-.1M17.4%2011.6q-.6-.9-1-.1%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.2%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M16%2015.5v8M13.2%2019.5h5.6%22%20stroke%3D%22%23111%22%20stroke-width%3D%22.7%22/%3E%3C/svg%3E") 16 16,auto}input,textarea,select{cursor:text}}
+@media (pointer:fine){html,body,a,button,label,[data-act],.rk,.pad,.idcard,summary{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20transform%3D%22rotate%28-30%2016%2016%29%20translate%2816%2016%29%20scale%28.86%29%20translate%28-16%20-16%29%22%3E%3Cpath%20d%3D%22M13%2012L8%209L8%203M12.5%2014L6%2012L3.5%206M12.5%2017L6%2019L3.5%2026M13%2020L9%2024L9%2030M19%2012L24%209L24%203M19.5%2014L26%2012L28.5%206M19.5%2017L26%2019L28.5%2026M19%2020L23%2024L23%2030%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linejoin%3D%22miter%22%20stroke-linecap%3D%22square%22/%3E%3Cpath%20d%3D%22M16%206L18.4%209.2L16%2011.8L13.6%209.2ZM16%2011.2C19.6%2011.2%2020.6%2015.8%2020.1%2019C19.6%2022.6%2017.6%2025.2%2016%2026.4C14.4%2025.2%2012.4%2022.6%2011.9%2019C11.4%2015.8%2012.4%2011.2%2016%2011.2Z%22%20fill%3D%22%23fff%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M13%2012L8%209L8%203M12.5%2014L6%2012L3.5%206M12.5%2017L6%2019L3.5%2026M13%2020L9%2024L9%2030M19%2012L24%209L24%203M19.5%2014L26%2012L28.5%206M19.5%2017L26%2019L28.5%2026M19%2020L23%2024L23%2030%22%20fill%3D%22none%22%20stroke%3D%22%230b0b0c%22%20stroke-width%3D%222.1%22%20stroke-linejoin%3D%22miter%22%20stroke-linecap%3D%22square%22/%3E%3Cpath%20d%3D%22M16%206L18.4%209.2L16%2011.8L13.6%209.2ZM16%2011.2C19.6%2011.2%2020.6%2015.8%2020.1%2019C19.6%2022.6%2017.6%2025.2%2016%2026.4C14.4%2025.2%2012.4%2022.6%2011.9%2019C11.4%2015.8%2012.4%2011.2%2016%2011.2Z%22%20fill%3D%22%230b0b0c%22/%3E%3C/g%3E%3C/svg%3E") 11 7,auto}input,textarea,select{cursor:text}}
 .cur-ring.big{background:transparent;border-style:dashed}
 .web-splat{position:fixed;width:120px;height:120px;margin:-60px 0 0 -60px;pointer-events:none;z-index:299;color:var(--ink);animation:splat 1s cubic-bezier(.2,.9,.2,1) forwards}
 .web-splat svg{width:100%;height:100%;overflow:visible}
@@ -888,7 +891,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 <body>
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
-<div class="cur-ring" id="cur" aria-hidden="true"></div>
+<div class="cur-ring" id="cur" aria-hidden="true"></div><canvas id="silk" aria-hidden="true"></canvas>
 <div class="hang" id="hang" aria-hidden="false"><i></i><button id="hangBtn" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M14 14 8 8 4 10M13.5 16 7 14 3 16M13.5 18 7 20 3 23M14 20 9 25 6 29M18 14 24 8 28 10M18.5 16 25 14 29 16M18.5 18 25 20 29 23M18 20 23 25 26 29" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14 8 8 4 10M13.5 16 7 14 3 16M13.5 18 7 20 3 23M14 20 9 25 6 29M18 14 24 8 28 10M18.5 16 25 14 29 16M18.5 18 25 20 29 23M18 20 23 25 26 29" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="16" cy="19.5" rx="3.9" ry="4.9" fill="#E23636" stroke="#111" stroke-width="1.2"/><circle cx="16" cy="12.2" r="2.9" fill="#E23636" stroke="#111" stroke-width="1.2"/><path d="M14.6 11.6q.6-.9 1-.1M17.4 11.6q-.6-.9-1-.1" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M16 15.5v8M13.2 19.5h5.6" stroke="#111" stroke-width=".7"/></svg></button><span class="tip">Back to top 🕸</span></div>
 
 <nav class="nav" id="nav" aria-label="Main"><div class="wrap">
@@ -1888,6 +1891,17 @@ function decodeName(){if(REDUCE)return;const G="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*<>
   const up=()=>{if(!drag)return;drag=false;if(Math.abs(ang)<2){ang=10;vel=0}raf=requestAnimationFrame(spring)};
   c.addEventListener("pointerup",up);c.addEventListener("pointercancel",up);c.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")hint.classList.add("gone")})})();
 /* ================= Spider-Man touches ================= */
+// silk thread: a thin web strand trails the spider cursor and fades out
+(function(){const c=$("#silk");if(!c||!FINE||REDUCE){c&&c.remove();return}let g=fitCanvas(c),pts=[],raf=0,last=0;
+  addEventListener("resize",()=>g=fitCanvas(c));
+  addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;pts.push({x:e.clientX-4,y:e.clientY-2,t:performance.now()});if(pts.length>40)pts.shift();if(!raf)raf=requestAnimationFrame(draw)},{passive:true});
+  function draw(now){const{x,w,h}=g;x.clearRect(0,0,w,h);pts=pts.filter(p=>now-p.t<420);
+    if(pts.length>2){x.lineCap="round";x.lineJoin="round";
+      for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],life=1-(now-b.t)/420;x.strokeStyle=COL.ink;x.globalAlpha=Math.max(0,life)*.55;x.lineWidth=.6+life*1.2;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      x.globalAlpha=1}
+    raf=pts.length?requestAnimationFrame(draw):0}
+})();
+
 (function(){
   // web splat + THWIP wherever someone clicks (not inside the project demos or form fields)
   if(!REDUCE)document.addEventListener("pointerdown",e=>{const t=e.target;if(e.button!==0||!t.closest||t.closest("#stage,input,textarea,select,iframe,.idcard"))return;
