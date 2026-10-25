@@ -7,7 +7,7 @@
 <meta name="description" content="Vishal Raj P R: AI engineer building voice AI, verifiable AI and real-world apps. Try every project live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <script>try{var t=localStorage.getItem("vr-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add("js")</script>
 <style>
 /* Layout: one flat accent colour that changes with the selected project; no gradients. */
@@ -817,6 +817,38 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 .quote em{font-style:normal;color:var(--mute);font-weight:400}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr}.badge-wrap{margin-top:10px}.lanyard{height:60px}.idcard{transform-origin:50% -60px}}
 
+/* Spider-Man touches: spider cursor, web splat, hanging spider, cobweb, spider-sense */
+@media (pointer:fine){html,body,a,button,label,[data-act],.rk,.pad,.idcard,summary{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M14%2014%208%208%204%2010M13.5%2016%207%2014%203%2016M13.5%2018%207%2020%203%2023M14%2020%209%2025%206%2029M18%2014%2024%208%2028%2010M18.5%2016%2025%2014%2029%2016M18.5%2018%2025%2020%2029%2023M18%2020%2023%2025%2026%2029%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M14%2014%208%208%204%2010M13.5%2016%207%2014%203%2016M13.5%2018%207%2020%203%2023M14%2020%209%2025%206%2029M18%2014%2024%208%2028%2010M18.5%2016%2025%2014%2029%2016M18.5%2018%2025%2020%2029%2023M18%2020%2023%2025%2026%2029%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2219.5%22%20rx%3D%223.9%22%20ry%3D%224.9%22%20fill%3D%22%23E23636%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.2%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.2%22%20r%3D%222.9%22%20fill%3D%22%23E23636%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.2%22/%3E%3Cpath%20d%3D%22M14.6%2011.6q.6-.9%201-.1M17.4%2011.6q-.6-.9-1-.1%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.2%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M16%2015.5v8M13.2%2019.5h5.6%22%20stroke%3D%22%23111%22%20stroke-width%3D%22.7%22/%3E%3C/svg%3E") 16 16,auto}input,textarea,select{cursor:text}}
+.cur-ring.big{background:transparent;border-style:dashed}
+.web-splat{position:fixed;width:120px;height:120px;margin:-60px 0 0 -60px;pointer-events:none;z-index:299;color:var(--ink);animation:splat 1s cubic-bezier(.2,.9,.2,1) forwards}
+.web-splat svg{width:100%;height:100%;overflow:visible}
+@keyframes splat{0%{transform:scale(.1) rotate(-25deg);opacity:1}35%{transform:scale(1) rotate(0);opacity:.9}100%{transform:scale(1.08);opacity:0}}
+.thwip{position:fixed;pointer-events:none;z-index:300;font-family:Bangers,"Archivo",Impact,sans-serif;font-size:26px;letter-spacing:1px;color:#E23636;-webkit-text-stroke:1.5px #111;paint-order:stroke fill;text-shadow:3px 3px 0 #111;animation:thwip .9s cubic-bezier(.2,1.6,.4,1) forwards;white-space:nowrap}
+@keyframes thwip{0%{transform:translate(-50%,-50%) scale(.2) rotate(-14deg);opacity:0}25%{transform:translate(-50%,-130%) scale(1.15) rotate(-10deg);opacity:1}100%{transform:translate(-50%,-190%) scale(1) rotate(-6deg);opacity:0}}
+.hang{position:fixed;top:68px;right:26px;z-index:55;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.hang i{display:block;width:1.5px;background:var(--ink);opacity:.55;height:40px}
+.hang button{pointer-events:auto;border:0;background:none;padding:0;width:40px;height:40px;margin-top:-4px;transform-origin:50% -60px;animation:dangle 3.2s ease-in-out infinite}
+.hang button svg{width:100%;height:100%;transform:rotate(180deg);transition:transform .3s}
+.hang button:hover svg{transform:rotate(180deg) scale(1.2)}
+.hang .tip{position:absolute;top:100%;right:0;margin-top:6px;font-family:var(--mono);font-size:.68rem;background:var(--ink);color:var(--bg);padding:3px 8px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .2s}
+.hang button:hover+.tip{opacity:1}
+@keyframes dangle{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}}
+.web-corner{position:absolute;top:0;left:0;width:min(260px,40vw);height:auto;z-index:0;pointer-events:none;color:var(--line2)}
+.web-corner path{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:400;stroke-dashoffset:400}
+.web-corner.in path{animation:draw 2.2s ease forwards}
+.web-corner.in path:nth-child(n+8){animation-delay:.6s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.badge-wrap{position:relative}
+.sense{position:absolute;top:0;left:50%;width:520px;height:140px;margin-left:-260px;pointer-events:none;opacity:0;transition:opacity .2s;color:#E23636;z-index:3}
+.sense path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.badge-wrap:hover .sense,.badge-wrap.tingle .sense{opacity:1;animation:tingle .18s steps(2) infinite}
+@keyframes tingle{50%{transform:translateY(-3px) scale(1.04)}}
+.sense-tag{position:absolute;top:0;left:50%;transform:translateX(-50%) rotate(-4deg);font-family:Bangers,Impact,sans-serif;font-size:1rem;letter-spacing:1px;color:#E23636;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:4}
+.badge-wrap:hover .sense-tag,.badge-wrap.tingle .sense-tag{opacity:1}
+@media (max-width:860px){.hang{right:10px}.hang button{width:30px;height:30px}}
+.hang{transition:opacity .4s,transform .4s}.hang.away{opacity:0;transform:translateY(-30px);pointer-events:none}.hang.away button{pointer-events:none}
+@media (prefers-reduced-motion:reduce){.hang button,.badge-wrap:hover .sense{animation:none}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .js .rv,.js .clip{opacity:1;transform:none;clip-path:none}
@@ -828,6 +860,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
 <div class="cur-ring" id="cur" aria-hidden="true"></div>
+<div class="hang" id="hang" aria-hidden="false"><i></i><button id="hangBtn" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M14 14 8 8 4 10M13.5 16 7 14 3 16M13.5 18 7 20 3 23M14 20 9 25 6 29M18 14 24 8 28 10M18.5 16 25 14 29 16M18.5 18 25 20 29 23M18 20 23 25 26 29" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14 8 8 4 10M13.5 16 7 14 3 16M13.5 18 7 20 3 23M14 20 9 25 6 29M18 14 24 8 28 10M18.5 16 25 14 29 16M18.5 18 25 20 29 23M18 20 23 25 26 29" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="16" cy="19.5" rx="3.9" ry="4.9" fill="#E23636" stroke="#111" stroke-width="1.2"/><circle cx="16" cy="12.2" r="2.9" fill="#E23636" stroke="#111" stroke-width="1.2"/><path d="M14.6 11.6q.6-.9 1-.1M17.4 11.6q-.6-.9-1-.1" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M16 15.5v8M13.2 19.5h5.6" stroke="#111" stroke-width=".7"/></svg></button><span class="tip">Back to top 🕸</span></div>
 
 <nav class="nav" id="nav" aria-label="Main"><div class="wrap">
   <a class="logo" href="#top"><b>VR</b><span>VISHAL RAJ P R</span></a>
@@ -948,6 +981,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 </section>
 
 <section class="contact" id="contact">
+  <svg class="web-corner rv" viewBox="0 0 260 260" aria-hidden="true"><path d="M0 0L260.0 0.0"/><path d="M0 0L251.1 67.3"/><path d="M0 0L225.2 130.0"/><path d="M0 0L183.8 183.8"/><path d="M0 0L130.0 225.2"/><path d="M0 0L67.3 251.1"/><path d="M0 0L0.0 260.0"/><path d="M50.0 0.0Q44.2 5.8 48.3 12.9Q41.2 17.1 43.3 25.0Q35.4 27.2 35.4 35.4Q27.2 35.4 25.0 43.3Q17.1 41.2 12.9 48.3Q5.8 44.2 0.0 50.0"/><path d="M95.0 0.0Q84.0 11.1 91.8 24.6Q78.3 32.4 82.3 47.5Q67.3 51.6 67.2 67.2Q51.6 67.3 47.5 82.3Q32.4 78.3 24.6 91.8Q11.1 84.0 0.0 95.0"/><path d="M145.0 0.0Q128.3 16.9 140.1 37.5Q119.5 49.5 125.6 72.5Q102.6 78.8 102.5 102.5Q78.8 102.6 72.5 125.6Q49.5 119.5 37.5 140.1Q16.9 128.3 0.0 145.0"/><path d="M200.0 0.0Q176.9 23.3 193.2 51.8Q164.9 68.3 173.2 100.0Q141.6 108.6 141.4 141.4Q108.6 141.6 100.0 173.2Q68.3 164.9 51.8 193.2Q23.3 176.9 0.0 200.0"/></svg>
   <canvas id="dots" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="eyebrow rv"><b>05</b> Contact</div>
@@ -964,7 +998,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
           <a class="btn" href="https://github.com/vishalraj1703" target="_blank" rel="noopener" data-ico="github">GitHub</a>
         </div>
       </div>
-      <div class="badge-wrap rv">
+      <div class="badge-wrap rv"><span class="sense-tag" aria-hidden="true">SPIDER-SENSE!</span><svg class="sense" viewBox="0 0 520 140" aria-hidden="true"><path d="M115 60l-14-8 6-10-14-8 6-10"/><path d="M112 90l-18-2 2-12-18-2 2-12"/><path d="M110 120l-18 4-2-12-18 4-2-12"/><path d="M405 60l14-8-6-10 14-8-6-10"/><path d="M408 90l18-2-2-12 18-2-2-12"/><path d="M410 120l18 4 2-12 18 4 2-12"/></svg>
         <div class="lanyard" aria-hidden="true"></div>
         <span class="id-hint" id="idHint">👆 Grab &amp; swing me</span>
         <div class="idcard" id="idcard">
@@ -1048,89 +1082,95 @@ function demoCheckfix(st,run){
   const ln=(h="",c="")=>{const d=document.createElement("div");d.className="tl "+c;d.innerHTML=h;body.appendChild(d);body.scrollTop=body.scrollHeight;return d};
   const out=async(r,h,ms=170)=>{ln(h);await r.wait(ms)};
   async function cmd(r,t){const d=ln('<span class="pr">❯</span> <span class="cm"></span><span class="cur"></span>');await typeInto($(".cm",d),t,r,60);$(".cur",d).remove();await r.wait(300)}
-  async function bar(r,label,ms,fail){const total=120,stop=fail?Math.round(total*fail):total;const d=ln(`   <span class="t-mute">${label}</span> <span class="pb"><span></span></span> <span class="n">0</span><span class="t-mute">/${total}</span>`);const f=$(".pb span",d),n=$(".n",d);const k=Math.max(1,Math.round(ms/45));for(let i=1;i<=k;i++){const v=stop*i/k;f.style.width=v/total*100+"%";n.textContent=Math.round(v);await r.wait(45)}if(fail)d.classList.add("fail")}
+  async function bar(r,label,ms,fail,total=40){const stop=fail?Math.round(total*fail):total;const d=ln(`   <span class="t-mute">${label}</span> <span class="pb"><span></span></span> <span class="n">0</span><span class="t-mute">/${total}</span>`);const f=$(".pb span",d),n=$(".n",d);const k=Math.max(1,Math.round(ms/45));for(let i=1;i<=k;i++){const v=stop*i/k;f.style.width=v/total*100+"%";n.textContent=Math.round(v);await r.wait(45)}if(fail)d.classList.add("fail")}
   async function prompt(r,q,a){const d=ln(`   ${q} <span class="t-w"></span><span class="cur"></span>`);await r.wait(700);$(".t-w",d).textContent=a;$(".cur",d).remove();await r.wait(350)}
   const code=src=>ln(`<pre class="code">${hl(src)}</pre>`);
 
   const ASK={
     rotate:{label:"rotate a list left by k",run:async r=>{
-      await cmd(r,'checkfix ask "rotate a list left by k places"');
+      await cmd(r,'checkfix ask "rotate a list left by k places" --yes --allow-local-runner');
       await out(r,'<span class="t-mute">model</span> qwen2.5-coder:3b <span class="t-mute">· local · no internet</span>');
-      await out(r,'<span class="t-a2">→ proposed contract</span>');
+      await out(r,'<span class="t-a2">→ proposed function</span> <span class="t-mute">(AI suggestion)</span>');
       await out(r,'   rotate_left(items: list[int], k: int) -> list[int]',120);
-      await out(r,'   <span class="t-mute">example</span> rotate_left([1, 2, 3, 4], 1) == [2, 3, 4, 1]',120);
-      await out(r,'   <span class="t-mute">example</span> rotate_left([1, 2, 3], 0) == [1, 2, 3]',120);
-      await out(r,'   <span class="t-mute">rule   </span> sorted(result) == sorted(items)',120);
-      await prompt(r,"accept this contract? [Y/n]","y");
-      await out(r,'<span class="t-a2">→ attempt 1</span> <span class="t-mute">model writes the code…</span>',600);
-      await bar(r,"examples + rules + random inputs",1300,.53);
-      await out(r,'   <span class="t-bad">✗ counterexample</span> rotate_left([1, 2], 3) <span class="t-bad">→ IndexError</span>');
-      await out(r,'   <span class="t-mute">  shrunk automatically to the smallest failing input</span>',500);
-      await out(r,'<span class="t-a2">→ attempt 2</span> <span class="t-mute">repair, with the counterexample as evidence…</span>',600);
-      await bar(r,"examples + rules + random inputs",1300);
-      await out(r,'   <span class="t-ok">✓ passed</span> 2 examples · 1 rule · 120 random and edge-case inputs');
-      await out(r,'<span class="t-ok">✔ saved</span> rotate_left.py <span class="t-mute">(accepted v1)</span>',250);
-      code("def rotate_left(items, k):\n    if not items:\n        return []\n    k %= len(items)   # the fix: k can be bigger than the list\n    return items[k:] + items[:k]");
+      await out(r,'   <span class="t-mute">example</span> rotate_left([1, 2, 3, 4, 5], 2) -> [3, 4, 5, 1, 2]',120);
+      await out(r,'   <span class="t-mute">example</span> rotate_left([1, 2, 3, 4, 5], 7) -> [3, 4, 5, 1, 2]',120);
+      await out(r,'   <span class="t-mute">example</span> rotate_left([1, 2, 3, 4, 5], 0) -> [1, 2, 3, 4, 5]',120);
+      await out(r,'   <span class="t-mute">inputs </span> len(items) > 0',120);
+      await out(r,'<span class="t-a2">→ automatic review of the AI\'s own proposal</span>',500);
+      await out(r,'   <span class="t-bad">✗ dropped rule</span> "result is a list of the same length as items" <span class="t-mute">(not valid Python)</span>',300);
+      await out(r,'   <span class="t-bad">✗ removed example</span> rotate_left([], 2) -> [] <span class="t-mute">(outside its own input range)</span>',500);
+      await out(r,'<span class="t-a2">→ attempt 1</span> <span class="t-mute">code received after 1.4 s · checking…</span>',600);
+      await bar(r,"checks passed",1300,0,9);
+      await out(r,'   <span class="t-ok">✓ PASSED_CHECKS</span> 9 of 9 checks (examples + 62 generated inputs) · 1 model call');
+      code("def rotate_left(items: list[int], k: int) -> list[int]:\n    n = len(items)\n    k = k % n  # Handle cases where k is greater than the length of the list\n    return items[k:] + items[:k]");
+      await out(r,'<span class="t-ok">✔ wrote</span> rotate_left.py <span class="t-mute">and</span> rotate_left.contract.toml',250);
       body.scrollTop=body.scrollHeight;
       await out(r,'<span class="t-mute">The model never decides if code is correct. The checks do.</span>');
     }},
     celsius:{label:"convert celsius to fahrenheit",run:async r=>{
-      await cmd(r,'checkfix ask "convert celsius to fahrenheit"');
-      await out(r,'<span class="t-a2">→ proposed contract</span>');
-      await out(r,'   celsius_to_fahrenheit(c: float) -> float',120);
-      await out(r,'   <span class="t-mute">example</span> celsius_to_fahrenheit(100) == 212',120);
-      await out(r,'   <span class="t-mute">example</span> celsius_to_fahrenheit(-40) == -40',120);
-      await out(r,'   <span class="t-mute">rule   </span> result >= 0   <span class="t-a3">← suggested by the AI</span>',600);
-      await out(r,'<span class="t-a2">→ screening the contract against its own examples</span>',700);
-      await out(r,'   <span class="t-bad">✗ dropped rule</span> result >= 0 <span class="t-mute">(contradicts the example -40 → -40)</span>',600);
-      await prompt(r,"accept this contract? [Y/n]","y");
-      await out(r,'<span class="t-a2">→ attempt 1</span> <span class="t-mute">model writes the code…</span>',600);
-      await bar(r,"examples + random inputs",1100);
-      await out(r,'   <span class="t-ok">✓ passed</span> in 1 model call');
-      code("def celsius_to_fahrenheit(c):\n    return c * 9 / 5 + 32");
+      await cmd(r,'checkfix ask "convert celsius to fahrenheit" --yes --allow-local-runner');
+      await out(r,'<span class="t-a2">→ proposed function</span> <span class="t-mute">(AI suggestion)</span>');
+      await out(r,'   celsius_to_fahrenheit(celsius: float) -> float',120);
+      await out(r,'   <span class="t-mute">example</span> celsius_to_fahrenheit(100) -> 212.0',120);
+      await out(r,'   <span class="t-mute">example</span> celsius_to_fahrenheit(-40) -> -40.0',120);
+      await out(r,'   <span class="t-mute">example</span> celsius_to_fahrenheit(0.5) -> 32.1',120);
+      await out(r,'   <span class="t-mute">rule   </span> result >= 32.0   <span class="t-a3">← suggested by the AI</span>',600);
+      await out(r,'<span class="t-a2">→ automatic review of the AI\'s own proposal</span>',700);
+      await out(r,'   <span class="t-bad">✗ dropped rule</span> result >= 32.0 <span class="t-mute">(the example -40 → -40.0 breaks it; a limit on the answer alone may only fit the others by chance)</span>',700);
+      await out(r,'<span class="t-a2">→ attempt 1</span> <span class="t-mute">checking…</span>',250);await bar(r,"checks passed",600,.8,10);
+      await out(r,'   <span class="t-bad">✗</span> FAILED_CHECKS (2 failed)',300);
+      await out(r,'<span class="t-a2">→ attempt 2</span> <span class="t-mute">repair…</span>',250);await bar(r,"checks passed",600,.9,10);
+      await out(r,'   <span class="t-bad">✗</span> FAILED_CHECKS (1 failed)',300);
+      await out(r,'<span class="t-a2">→ attempt 3</span> <span class="t-mute">same code as attempt 2; not checked again</span>',500);
+      await out(r,'   Two different versions of the code agree: celsius_to_fahrenheit(0.5) returned <span class="t-ok">32.9</span>,',150);
+      await out(r,'   but the example says <span class="t-bad">32.1</span>. <span class="t-mute">→ using the code\'s answer instead</span>',600);
+      await out(r,'   <span class="t-ok">✓ PASSED_CHECKS</span> 10 of 10 checks · 3 model calls');
+      code("def celsius_to_fahrenheit(celsius: float) -> float:\n    return round((celsius * 9/5) + 32, 2)");
       body.scrollTop=body.scrollHeight;
-      await out(r,'<span class="t-mute">Wrong AI rules get caught before they can reject correct code.</span>');
+      await out(r,'<span class="t-mute">The AI made two mistakes of its own, a wrong rule and a wrong example. Both were caught; the correct -40 → -40 was kept.</span>');
     }},
     password:{label:"rate a password weak / medium / strong",run:async r=>{
-      await cmd(r,'checkfix ask "rate a password as weak, medium or strong"');
-      await out(r,'<span class="t-a2">→ proposed contract</span>');
-      await out(r,'   password_level(pw: str) -> str',120);
-      await out(r,'   <span class="t-mute">example</span> password_level("abc") == "weak"',120);
-      await out(r,'   <span class="t-mute">example</span> password_level("Tiger2026") == "medium"',120);
-      await out(r,'   <span class="t-mute">example</span> password_level("T!ger#2026xyz") == "strong"',120);
-      await out(r,'   <span class="t-mute">rule   </span> result in {"weak", "medium", "strong"}',120);
-      await prompt(r,"accept this contract? [Y/n]","y");
-      const fails=['password_level("Tiger2026") → "strong"','password_level("") → IndexError','password_level("T!ger#2026xyz") → "medium"','password_level("abcdefgh") → "medium"'];
-      for(let i=0;i<4;i++){await out(r,`<span class="t-a2">→ attempt ${i+1}</span>`,250);await bar(r,"checking",600,.3+i*.15);await out(r,`   <span class="t-bad">✗</span> ${esc(fails[i])}`,300)}
-      await out(r,'<span class="t-a2">→ attempt 5</span>',250);await bar(r,"checking",800);
-      await out(r,'   <span class="t-ok">✓ passed</span> all 3 examples, the rule, 120 random inputs');
-      await out(r,'<span class="t-mute">5 tries, each one repaired with the exact input that broke the last.</span>');
+      await cmd(r,'checkfix ask "rate a password as weak, medium or strong" --yes --allow-local-runner');
+      await out(r,'<span class="t-a2">→ proposed function</span> <span class="t-mute">(AI suggestion)</span>');
+      await out(r,'   rate_password(password: str) -> str',120);
+      await out(r,'   <span class="t-mute">example</span> rate_password("Password123!") -> "strong"',120);
+      await out(r,'   <span class="t-mute">example</span> rate_password("Password123") -> "medium"',120);
+      await out(r,'   <span class="t-mute">example</span> rate_password("password123") -> "medium"',120);
+      await out(r,'   <span class="t-mute">example</span> rate_password("password") -> "weak"',120);
+      await out(r,'   <span class="t-mute">rule   </span> result in ["weak", "medium", "strong"]',120);
+      await out(r,'<span class="t-a2">→ attempt 1</span>',250);await bar(r,"checks passed",700,.9,10);
+      await out(r,'   <span class="t-bad">✗</span> FAILED_CHECKS (1 failed)',300);
+      await out(r,'<span class="t-a2">→ attempt 2</span> <span class="t-mute">same code as attempt 1; not checked again</span>',400);
+      await out(r,'<span class="t-a2">→ attempt 3</span> <span class="t-mute">a fresh try</span>',250);await bar(r,"checks passed",700,.6,10);
+      await out(r,'   <span class="t-bad">✗</span> FAILED_CHECKS (4 failed)',400);
+      await out(r,'<span class="t-bad">✗ no passing version</span> <span class="t-mute">best attempt: 9 of 10 checks</span>');
+      await out(r,'   rate_password("password123") should be <span class="t-ok">"medium"</span>, the code says <span class="t-bad">"weak"</span>',300);
+      await out(r,'   <span class="t-mute">saved as</span> rate_password.candidate.py <span class="t-mute">(NOT passing; nothing called done)</span>',500);
+      await out(r,'<span class="t-mute">The AI\'s examples disagreed with its own idea of "medium". checkfix doesn\'t guess: a person decides.</span>');
     }}
   };
   async function agent(r){
     await cmd(r,"checkfix agent --allow-local-runner");
-    await out(r,'<span class="t-a2">→ running the project\'s tests</span>',500);
-    await out(r,'   <span class="t-bad">✗</span> test_slugify_removes_punctuation_and_extra_spaces',120);
-    await out(r,'   <span class="t-bad">✗</span> test_word_count_ignores_extra_spaces',120);
-    await out(r,'   <span class="t-bad">✗</span> test_initials_are_capital_letters_with_dots',400);
-    await out(r,'<span class="t-a2">→ rehearsing fixes in a copy</span> <span class="t-mute">(your files are untouched)</span>',500);
-    await bar(r,"word_count",700);
-    await out(r,'   <span class="t-ok">✓ fixed</span> <span class="t-mute">behaviour diff</span> word_count("one  two   three")  <span class="t-bad">6</span> → <span class="t-ok">3</span>',400);
-    await bar(r,"slugify",1000);
-    await out(r,'   <span class="t-ok">✓ fixed</span> <span class="t-mute">behaviour diff</span> slugify("Hello World!")  <span class="t-bad">"hello-world!"</span> → <span class="t-ok">"hello-world"</span>',400);
-    await bar(r,"initials",1300,.7);
-    await out(r,'   <span class="t-a3">✗ not solved in 8 tries</span> <span class="t-mute">→ original kept, nothing overwritten</span>',400);
-    await out(r,'   <span class="t-ok">✓</span> security scan: no new findings · <span class="t-ok">✓</span> imports: only real packages',400);
-    await prompt(r,"apply 2 fixes? [y/N]","y");
-    await out(r,'   backups saved · undo any time with <span class="t-w">checkfix agent --undo</span>',300);
+    await out(r,'<span class="t-mute">Rehearsal: the agent works on a copy of the project; your files do not change until you agree.</span>',500);
+    await out(r,'<span class="t-a2">→ tests before:</span> <span class="t-bad">3 failing</span>',400);
+    await bar(r,"round 1 · slugify · tests passing",700,.001,3);
+    await out(r,'   <span class="t-a3">still 3 failing</span> <span class="t-mute">→ undone</span>',300);
+    await bar(r,"round 2 · word_count · tests passing",700,.34,3);
+    await out(r,'   <span class="t-ok">✓ 3 → 2 failing (kept)</span> <span class="t-mute">behaviour diff</span> word_count(" ")  <span class="t-bad">2</span> → <span class="t-ok">0</span>',400);
+    await bar(r,"round 3 · slugify · tests passing",900,.67,3);
+    await out(r,'   <span class="t-ok">✓ 2 → 1 failing (kept)</span> <span class="t-mute">behaviour diff</span> slugify("!")  <span class="t-bad">"!"</span> → <span class="t-ok">""</span>',400);
+    await bar(r,"rounds 4–6 · initials · tests passing",1300,.67,3);
+    await out(r,'   <span class="t-a3">still 1 failing each time</span> <span class="t-mute">→ undone, original kept</span>',400);
+    await prompt(r,"Apply these changes to textutils.py? [y/N]","y");
+    await out(r,'   undo any time with <span class="t-w">checkfix agent --undo</span>',300);
     await out(r,'<span class="t-ok">✔ 3 failing → 1 failing.</span> <span class="t-mute">Tests are never edited to make them pass.</span>');
   }
   async function bench(r){
-    await cmd(r,"checkfix bench --model qwen2.5-coder:1.5b --strategy all");
-    await out(r,'<span class="t-mute">25 coding tasks · every answer checked against its contract · same small model</span>',500);
-    const rows=[["single shot",72],["plain repair",76],["adaptive repair",84],["explore",88],["best of samples",92]];
-    for(const [k,v] of rows){const d=ln(`<div class="bench-row ${v===92?"best":""}"><span>${k}</span><div class="bb"><span></span></div><b class="t-w">0%</b></div>`);await r.wait(60);$(".bb span",d).style.width=v+"%";const b=$("b",d);for(let i=0;i<=v;i+=4){b.textContent=Math.min(i,v)+"%";await r.wait(18)}b.textContent=v+"%";await r.wait(250)}
-    await out(r,'<span class="t-ok">72% → 92%</span> <span class="t-mute">with no bigger model, only checking and repair.</span>');
+    await cmd(r,"checkfix bench --model ollama:qwen2.5-coder:1.5b --modes single,repair,adaptive,explore,samples --seed 1 --allow-local-runner");
+    await out(r,'<span class="t-mute">25 coding tasks · 3 runs (seeds) per setup = 75 task runs · same small model · hidden reference answers</span>',500);
+    const rows=[["single shot",75],["plain repair",77],["adaptive repair",80],["explore",85],["best of samples",85]];
+    for(const [k,v] of rows){const d=ln(`<div class="bench-row ${v===85?"best":""}"><span>${k}</span><div class="bb"><span></span></div><b class="t-w">0%</b></div>`);await r.wait(60);$(".bb span",d).style.width=v+"%";const b=$("b",d);for(let i=0;i<=v;i+=4){b.textContent=Math.min(i,v)+"%";await r.wait(18)}b.textContent=v+"%";await r.wait(250)}
+    await out(r,'<span class="t-ok">75% → 85%</span> <span class="t-mute">averaged over 3 runs, with no bigger model: only checking and fresh tries. (One lucky run reached 92%; the average is the honest number.)</span>');
   }
   function start(mode,key){
     sub.kill();sub=makeRun();body.innerHTML="";opts.innerHTML="";
@@ -1138,7 +1178,7 @@ function demoCheckfix(st,run){
       Object.entries(ASK).forEach(([k,v])=>{const b=document.createElement("button");b.textContent='"'+v.label+'"';if(k===key)b.classList.add("on");b.onclick=()=>start("ask",k);opts.appendChild(b)});
       ASK[key||"rotate"].run(sub);if(!key)opts.firstChild.classList.add("on");
     } else if(mode==="agent"){opts.innerHTML='<span class="on">examples/agent_demo · 3 failing tests</span>';agent(sub)}
-    else {opts.innerHTML='<span class="on">25 tasks · seed 0</span>';bench(sub)}
+    else {opts.innerHTML='<span class="on">25 tasks · 3 seeds</span>';bench(sub)}
   }
   $$(".seg button",st).forEach(b=>b.onclick=()=>{$$(".seg button",st).forEach(x=>x.classList.toggle("on",x===b));start(b.dataset.m)});
   start("ask");
@@ -1657,7 +1697,7 @@ const P=[
  {id:"checkfix",title:"checkfix",sub:"AI you can verify · Python package",tag:"Offline AI · Python package",acc:"#C6FF3D",on:"#0B0B0C",demo:demoCheckfix,
   why:"My deepest piece of engineering and a new idea: an AI coding assistant where the model never decides whether code is correct; only finished checks do.",
   cap:"Replays of real checkfix runs on local models, shortened. Switch between ask, agent and bench.",
-  bul:["<b>Plain English → contract → tested code.</b> Checks every answer against examples, rules and 120 random and edge-case inputs, then shrinks failures to the smallest counterexample.","<b>Coding agent</b> that rehearses fixes in a copy, shows a behaviour diff, scans for security issues and fake packages, and never edits tests.","<b>Runs fully offline</b> on local models (Ollama or llama.cpp) and picks the largest model that fits your computer.","Lifted a 1.5B model from <b>72% to 92%</b> on 25 coding tasks with checking and repair alone.","40+ commands, 440+ tests: mutation testing, prompt-injection tests, a classroom mode, exam and quiz builders."],
+  bul:["<b>Plain English → contract → tested code.</b> Checks every answer against examples, rules and 40 generated edge-case and random inputs, then shrinks failures to the smallest counterexample.","<b>Coding agent</b> that rehearses fixes in a copy, shows a behaviour diff, scans for security issues and fake packages, and never edits tests.","<b>Runs fully offline</b> on local models (Ollama or llama.cpp) and picks the largest model that fits your computer.","Lifted a 1.5B model from <b>75% to 85%</b> on 25 coding tasks (averaged over 3 runs) with checking and fresh tries alone.","40+ commands, 440+ tests: mutation testing, prompt-injection tests, a classroom mode, exam and quiz builders."],
   tech:["Python","Ollama","llama.cpp","Qwen2.5-Coder","pytest","property testing","agents"],repo:"",note:"Source going public soon. Ask me for a walkthrough."},
  {id:"careerhub",title:"HITS CareerHub",sub:"Campus placement platform",tag:"Production · Web + Android",acc:"#F47920",on:"#fff",demo:demoCareer,
   why:"Real users, real stakes: my college runs placements on it, from registration to offer letter, with four access levels and a security audit behind it.",
@@ -1720,7 +1760,7 @@ const SK=[["LLMs & agents","brain",{"LangChain":[],"Multi-agent systems":["check
   ["Machine learning","layers",{"PyTorch":[],"scikit-learn":["parkinson"],"TensorFlow":["parkinson","vision"],"SHAP":["parkinson"],"NLP":["jarvis","checkfix"],"Whisper":["jarvis"],"Silero VAD":["jarvis"],"TTS":["jarvis","vision"]}],
   ["Languages & tools","code",{"Python":["jarvis","checkfix","parkinson"],"SQL":["careerhub"],"PostgreSQL":["careerhub"],"Streamlit":["parkinson"],"WebSockets":["jarvis"],"Arduino":["footstep"],"Git":["checkfix","careerhub","jarvis"]}],
   ["Soft skills","spark",{
-    "Problem solving":[["jarvis","checkfix"],"Tracked a JARVIS production outage to a polling loop that was draining the database, and lifted a small 1.5B model from 72% to 92% with checking and repair alone."],
+    "Problem solving":[["jarvis","checkfix"],"Tracked a JARVIS production outage to a polling loop that was draining the database, and lifted a small 1.5B model from 75% to 85% (averaged over three runs) with checking and repair alone."],
     "Creativity":[["vision","jarvis"],"Turned a phone camera and a voice into eyes for blind users, and gave JARVIS a Silent mode that listens and takes notes instead of talking."],
     "Time management":[["careerhub","jarvis","checkfix"],"Shipped CareerHub, JARVIS and checkfix alongside final-year studies and a remote internship."],
     "Leadership":[["careerhub","jarvis"],"Led CareerHub from idea to production, working with placement staff, HODs and coordinators to decide what to build, and drove JARVIS from prototype to a research paper."],
@@ -1789,6 +1829,26 @@ function decodeName(){if(REDUCE)return;const G="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*<>
   c.addEventListener("pointermove",e=>{if(!drag)return;ang=Math.max(-35,Math.min(35,(e.clientX-x0)*.25));vel=0;c.style.transform=`rotate(${ang}deg)`});
   const up=()=>{if(!drag)return;drag=false;if(Math.abs(ang)<2){ang=10;vel=0}raf=requestAnimationFrame(spring)};
   c.addEventListener("pointerup",up);c.addEventListener("pointercancel",up);c.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")hint.classList.add("gone")})})();
+/* ================= Spider-Man touches ================= */
+(function(){
+  // web splat + THWIP wherever someone clicks (not inside the project demos or form fields)
+  if(!REDUCE)document.addEventListener("pointerdown",e=>{const t=e.target;if(e.button!==0||!t.closest||t.closest("#stage,input,textarea,select,iframe,.idcard"))return;
+    const w=document.createElement("div");w.className="web-splat";w.style.left=e.clientX+"px";w.style.top=e.clientY+"px";
+    let h='<svg viewBox="-60 -60 120 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">';const N=8;
+    for(let i=0;i<N;i++){const a=i*Math.PI*2/N+.2;h+=`<path d="M0 0L${(Math.cos(a)*56).toFixed(1)} ${(Math.sin(a)*56).toFixed(1)}"/>`}
+    for(const r of [16,32,48]){let d="";for(let i=0;i<=N;i++){const a=i*Math.PI*2/N+.2,b=(i-.5)*Math.PI*2/N+.2,x=Math.cos(a)*r,y=Math.sin(a)*r,cx=Math.cos(b)*r*.78,cy=Math.sin(b)*r*.78;d+=i?`Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}`:`M${x.toFixed(1)} ${y.toFixed(1)}`}h+=`<path d="${d}"/>`}
+    w.innerHTML=h+"</svg>";document.body.appendChild(w);setTimeout(()=>w.remove(),1050);
+    const words=["THWIP!","THWIP!","THWIP!","SPLAT!","THWIP!"],th=document.createElement("div");th.className="thwip";th.textContent=words[Math.random()*words.length|0];th.style.left=e.clientX+"px";th.style.top=e.clientY+"px";document.body.appendChild(th);setTimeout(()=>th.remove(),950)},{passive:true});
+  // the hanging spider lowers itself as you scroll; click it to climb back to the top
+  const hang=$("#hang"),thread=$("#hang i");
+  const len=()=>{const m=document.documentElement.scrollHeight-innerHeight,p=m>0?scrollY/m:0;thread.style.height=(40+p*(innerHeight*.62))+"px"};
+  addEventListener("scroll",len,{passive:true});addEventListener("resize",len);len();
+  const ct=$("#contact");if(ct)new IntersectionObserver(es=>hang.classList.toggle("away",es[0].isIntersecting),{threshold:.15}).observe(ct);
+  $("#hangBtn").onclick=()=>scrollTo({top:0,behavior:REDUCE?"auto":"smooth"});
+  // spider-sense tingles while someone handles the ID badge
+  const bw=$(".badge-wrap"),card=$("#idcard");if(bw&&card){const place=()=>{$(".sense",bw).style.top=(card.offsetTop+120)+"px";$(".sense-tag",bw).style.top=(card.offsetTop+card.offsetHeight+16)+"px"};place();addEventListener("resize",place);document.fonts&&document.fonts.ready.then(place);card.addEventListener("pointerdown",()=>bw.classList.add("tingle"));addEventListener("pointerup",()=>setTimeout(()=>bw.classList.remove("tingle"),500))}
+})();
+
 /* ================= Page effects ================= */
 $$(".split").forEach(h=>{const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const fr=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){fr.appendChild(document.createTextNode(p));return}const w=document.createElement("span");w.className="w";const s=document.createElement("span");s.textContent=p;w.appendChild(s);fr.appendChild(w)});c.replaceWith(fr)}else if(c.nodeType===1&&!c.classList.contains("w"))walk(c)})};walk(h);$$(".w>span",h).forEach((s,i)=>s.style.transitionDelay=i*80+"ms")});
 $("#talk").innerHTML="LET'S TALK".split(" ").map(w=>`<span class="wd">${[...w].map(c=>`<span>${c}</span>`).join("")}</span>`).join("");
