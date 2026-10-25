@@ -1871,7 +1871,7 @@ function decodeName(){if(REDUCE)return;const G="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*<>
 (function(){const c=$("#idcard");if(!c)return;const inner=$(".id-inner",c),front=$(".id-front",c),back=$(".id-back",c);
   $$(".id-acts,.hb-btn",c).forEach(el=>el.addEventListener("pointerdown",e=>e.stopPropagation()));
   $$("[data-flip]",c).forEach(b=>b.addEventListener("click",()=>{c.classList.add("alive");$("#idHint").classList.add("gone");const toBack=back.hidden;if(toBack)back.style.minHeight=front.offsetHeight+"px";inner.classList.add("flip");setTimeout(()=>{front.hidden=toBack;back.hidden=!toBack;inner.classList.remove("flip")},REDUCE?0:220)}));
-  const DB="",btn=$("#likeBtn"),n=$("#likeN");let liked=false,count=null;try{liked=localStorage.getItem("vr-liked")==="1"}catch(e){}
+  const DB="https://jarvis-8329c-default-rtdb.asia-southeast1.firebasedatabase.app",btn=$("#likeBtn"),n=$("#likeN");let liked=false,count=null;try{liked=localStorage.getItem("vr-liked")==="1"}catch(e){}
   const show=()=>{btn.setAttribute("aria-pressed",liked);n.textContent=count==null?(liked?"Liked":"Like"):count.toLocaleString("en-IN")};show();
   if(DB)fetch(DB+"/likes.json").then(r=>r.json()).then(v=>{count=+v||0;show()}).catch(()=>{});
   const burst=()=>{const r=btn.getBoundingClientRect();for(let i=0;i<8;i++){const h=document.createElement("span");h.className="heart-fly";h.textContent="♥";h.style.left=(r.left+r.width/2-8+(Math.random()*24-12))+"px";h.style.top=r.top+"px";h.style.setProperty("--x",(Math.random()*90-45)+"px");h.style.setProperty("--r",(Math.random()*60-30)+"deg");h.style.animationDelay=i*45+"ms";document.body.appendChild(h);setTimeout(()=>h.remove(),1500)}};
