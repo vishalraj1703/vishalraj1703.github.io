@@ -848,6 +848,13 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 
 
 .cur-ring{display:none!important}
+.cur-sense{position:fixed;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;pointer-events:none;z-index:299;color:#E23636;opacity:0;transition:opacity .15s}
+.cur-sense svg{width:100%;height:100%;overflow:visible}
+.cur-sense path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cur-sense.on{opacity:1}
+.cur-sense.on svg{animation:csense .16s steps(2) infinite}
+@keyframes csense{50%{transform:scale(1.12) rotate(4deg)}}
+#steps{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:296}
 .idle-web{position:fixed;left:0;top:0;width:76px;height:76px;margin:-38px 0 0 -38px;pointer-events:none;z-index:297;color:var(--ink);opacity:0;transition:opacity .25s}
 .idle-web svg{width:100%;height:100%;overflow:visible}
 .idle-web path{stroke-width:1.1;stroke-dasharray:60;stroke-dashoffset:60}
@@ -1896,6 +1903,24 @@ function decodeName(){if(REDUCE)return;const G="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*<>
   const up=()=>{if(!drag)return;drag=false;if(Math.abs(ang)<2){ang=10;vel=0}raf=requestAnimationFrame(spring)};
   c.addEventListener("pointerup",up);c.addEventListener("pointercancel",up);c.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")hint.classList.add("gone")})})();
 /* ================= Spider-Man touches ================= */
+// spider-sense: red zigzags flash around the cursor when something clickable is close by
+(function(){if(!FINE)return;const el=document.createElement("div");el.className="cur-sense";el.setAttribute("aria-hidden","true");
+  const z=(a)=>{const c=Math.cos(a),s=Math.sin(a),p=(r,o)=>`${(c*r-s*o).toFixed(1)} ${(s*r+c*o).toFixed(1)}`;return `<path d="M${p(15,0)}L${p(19,3)}L${p(22,-3)}L${p(26,3)}L${p(29,0)}"/>`};
+  el.innerHTML='<svg viewBox="-32 -32 64 64">'+[-.5,.15,.8,2.35,3,3.65].map(z).join("")+'</svg>';document.body.appendChild(el);
+  const HOT="a,button,summary,label,[data-act],.rk,.idcard,.pad,[role=tab]",near=(x,y)=>{for(const [dx,dy] of [[0,0],[26,0],[-26,0],[0,26],[0,-26]]){const t=document.elementFromPoint(x+dx,y+dy);if(t&&t.closest&&!t.closest("#stage,iframe")&&t.closest(HOT))return true}return false};
+  let raf=0,ev=null;addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;ev=e;if(!raf)raf=requestAnimationFrame(()=>{raf=0;el.style.transform=`translate(${ev.clientX}px,${ev.clientY}px)`;el.classList.toggle("on",near(ev.clientX,ev.clientY))})},{passive:true});
+  document.addEventListener("pointerleave",()=>el.classList.remove("on"));
+})();
+// footprints: the spider leaves pairs of tiny dots behind as it walks, fading after a second
+(function(){if(!FINE||REDUCE)return;const c=document.createElement("canvas");c.id="steps";c.setAttribute("aria-hidden","true");document.body.appendChild(c);
+  let g=fitCanvas(c),marks=[],lx=null,ly=null,side=1,raf=0;addEventListener("resize",()=>g=fitCanvas(c));
+  addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const t=e.target;if(t.closest&&t.closest("#stage,iframe")){lx=null;return}
+    const x=e.clientX,y=e.clientY;if(lx==null){lx=x;ly=y;return}const dx=x-lx,dy=y-ly,d=Math.hypot(dx,dy);if(d<18)return;
+    const nx=-dy/d,ny=dx/d;side=-side;const px=lx+nx*5*side,py=ly+ny*5*side;
+    marks.push({x:px-dx/d*2,y:py-dy/d*2,t:performance.now()},{x:px+dx/d*2,y:py+dy/d*2,t:performance.now()});if(marks.length>60)marks.splice(0,2);lx=x;ly=y;if(!raf)raf=requestAnimationFrame(draw)},{passive:true});
+  function draw(now){const{x,w,h}=g;x.clearRect(0,0,w,h);marks=marks.filter(m=>now-m.t<1000);x.fillStyle=COL.ink;
+    for(const m of marks){x.globalAlpha=(1-(now-m.t)/1000)*.45;x.beginPath();x.arc(m.x,m.y,1.6,0,6.283);x.fill()}x.globalAlpha=1;raf=marks.length?requestAnimationFrame(draw):0}
+})();
 // resting web: when the spider cursor stops for a moment, a small web spins up around it
 (function(){if(!FINE||REDUCE)return;const el=document.createElement("div");el.className="idle-web";el.setAttribute("aria-hidden","true");
   let h='<svg viewBox="-40 -40 80 80" fill="none" stroke="currentColor" stroke-linecap="round">';const N=8;
@@ -1917,7 +1942,7 @@ function decodeName(){if(REDUCE)return;const G="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*<>
     const words=["THWIP!","THWIP!","THWIP!","SPLAT!","THWIP!"],th=document.createElement("div");th.className="thwip";th.textContent=words[Math.random()*words.length|0];th.style.left=e.clientX+"px";th.style.top=e.clientY+"px";document.body.appendChild(th);setTimeout(()=>th.remove(),950)},{passive:true});
   // the hanging spider lowers itself as you scroll; click it to climb back to the top
   const hang=$("#hang"),thread=$("#hang i");
-  const len=()=>{const m=document.documentElement.scrollHeight-innerHeight,p=m>0?scrollY/m:0;thread.style.height=(40+p*(innerHeight*.62))+"px"};
+  const len=()=>{const m=document.documentElement.scrollHeight-innerHeight,p=m>0?scrollY/m:0;thread.style.height=(85+p*(innerHeight*.62))+"px"};
   addEventListener("scroll",len,{passive:true});addEventListener("resize",len);len();
   const ct=$("#contact");if(ct)new IntersectionObserver(es=>hang.classList.toggle("away",es[0].isIntersecting),{threshold:.15}).observe(ct);
   $("#hangBtn").onclick=()=>scrollTo({top:0,behavior:REDUCE?"auto":"smooth"});
